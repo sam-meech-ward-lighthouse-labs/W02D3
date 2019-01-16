@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dragons</title>
+</head>
+<body>
+
+  <ul>
+  <% for(const dragon of dragons) { %>
+    <li>
+      <p>name: <%= dragon.name %>, type: <%= dragon.type %></p>
+      <form action="/dragons/<%= dragon.name %>/delete" method="post">
+        <button>␡</button>
+      </form>
+    </li>
+  <% } %>
+  </ul>
+  
+<form action="/dragons" method="post">
+  <label for="dragon-name">Name:</label>
+  <input id="dragon-name" type="text" name="name"> 
+
+  <label for="dragon-type">Type:</label>
+  <input id="dragon-type" type="text" name="type">
+
+  <button>Create Dragon 🐉</button>
+</form>
+
+</body>
+</html>
