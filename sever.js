@@ -34,10 +34,13 @@ app.post('/dragons', (req, res) => {
 app.post('/dragons/:name/delete', (req, res) => {
   const name = req.params.name;
 
+  // I forgot about findIndex during the lecture, does these two things but with one function
+  // google findIndex
   const dragon = dragons.find((dragon) => {
     return dragon.name === name;
   });
   const index = dragons.indexOf(dragon);
+   
   dragons.splice(index, 1);
 
   res.redirect('/dragons');
